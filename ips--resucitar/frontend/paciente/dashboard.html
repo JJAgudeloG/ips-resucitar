@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>IPS Resucitar - Mi Panel</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <div class="contenedor-dashboard">
+        <header>
+            <h1>Bienvenido, <span id="nombrePaciente"></span></h1>
+            <button id="btnCerrarSesion">Cerrar sesión</button>
+        </header>
+
+        <nav class="pestanas">
+            <button class="pestana-btn activa" data-seccion="citas">Mis citas</button>
+            <button class="pestana-btn" data-seccion="agendar">Agendar cita</button>
+            <button class="pestana-btn" data-seccion="resultados">Resultados</button>
+        </nav>
+
+        <section id="seccionCitas" class="seccion">
+            <h2>Mis citas</h2>
+            <div id="listaCitas" class="grid-tarjetas">Cargando...</div>
+        </section>
+
+        <section id="seccionAgendar" class="seccion oculta">
+            <h2>Agendar cita</h2>
+
+            <form id="formAgendar">
+                <label for="servicio">Servicio</label>
+                <select id="servicio" required>
+                    <option value="">Selecciona un servicio</option>
+                </select>
+
+                <label for="medico">Médico</label>
+                <select id="medico" required>
+                    <option value="">Selecciona un médico</option>
+                </select>
+
+                <label for="fecha">Fecha</label>
+                <input type="date" id="fecha" required>
+
+                <label for="hora">Hora</label>
+                <input type="time" id="hora" required>
+
+                <label for="observaciones">Observaciones (opcional)</label>
+                <textarea id="observaciones" rows="3"></textarea>
+
+                <button type="submit">Agendar</button>
+            </form>
+
+            <p id="mensajeAgendar"></p>
+        </section>
+
+        <section id="seccionResultados" class="seccion oculta">
+            <h2>Resultados de laboratorio</h2>
+            <div id="listaResultados" class="grid-tarjetas">Cargando...</div>
+        </section>
+
+        <div id="modalPago" class="modal oculta">
+            <div class="modal-contenido">
+                <h3>Registrar pago</h3>
+                <form id="formPago">
+                    <input type="hidden" id="citaIdPago">
+
+                    <label for="montoPago">Monto</label>
+                    <input type="number" id="montoPago" required>
+
+                    <label for="metodoPago">Método de pago</label>
+                    <select id="metodoPago" required>
+                        <option value="">Selecciona un método</option>
+                        <option value="tarjeta">Tarjeta</option>
+                        <option value="PSE">PSE</option>
+                        <option value="efectivo">Efectivo</option>
+                    </select>
+
+                    <label for="referenciaPago">Referencia (opcional)</label>
+                    <input type="text" id="referenciaPago">
+
+                    <button type="submit">Confirmar pago</button>
+                </form>
+                <p id="mensajePago"></p>
+                <button id="cerrarModalPago">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/citas.js"></script>
+    <script src="../js/resultados.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPS Resucitar</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-contenido">
+            <div class="logo">
+                <span class="logo-icono">🏥</span>
+                <span>IPS Resucitar</span>
+            </div>
+            <div class="navbar-botones">
+                <a href="paciente/login.html"><button class="btn-outline">Paciente</button></a>
+                <a href="admin/login.html"><button class="btn-outline">Administrador</button></a>
+                <a href="paciente/registro.html"><button class="btn-solido">Crear cuenta</button></a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Cuidamos tu salud, <span>simplificamos tus citas</span></h1>
+        <p>Agenda, consulta resultados y gestiona tus citas médicas en un solo lugar.</p>
+    </header>
+
+    <main class="contenedor-landing">
+        <section class="card-destacada">
+            <h2><span class="icono-seccion">📍</span> Información institucional</h2>
+            <div id="infoInstitucional" class="grid-info">Cargando...</div>
+        </section>
+
+        <section>
+            <h2><span class="icono-seccion">💼</span> Nuestros servicios</h2>
+            <div id="listaServiciosPublica" class="grid-tarjetas">Cargando...</div>
+        </section>
+
+        <section>
+            <h2><span class="icono-seccion">🩺</span> Especialidades</h2>
+            <div id="listaEspecialidadesPublica" class="grid-tarjetas">Cargando...</div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 IPS Resucitar · Sistema de gestión médica</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/institucional.js"></script>
+</body>
+</html>

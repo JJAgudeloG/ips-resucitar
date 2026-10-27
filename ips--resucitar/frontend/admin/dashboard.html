@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IPS Resucitar - Panel Administrativo</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <div class="contenedor-dashboard">
+        <header>
+            <h1>Panel Admin - <span id="nombreAdmin"></span></h1>
+            <button id="btnCerrarSesionAdmin">Cerrar sesión</button>
+        </header>
+
+        <nav class="pestanas">
+            <button class="pestana-btn activa" data-seccion="medicos">Médicos</button>
+            <button class="pestana-btn" data-seccion="servicios">Servicios</button>
+            <button class="pestana-btn" data-seccion="especialidades">Especialidades</button>
+            <button class="pestana-btn" data-seccion="citas">Citas</button>
+            <button class="pestana-btn" data-seccion="resultados">Resultados</button>
+        </nav>
+
+        <section id="seccionMedicos" class="seccion">
+            <h2>Médicos</h2>
+
+            <form id="formMedico">
+                <label for="nombreMedico">Nombre</label>
+                <input type="text" id="nombreMedico" required>
+
+                <label for="apellidoMedico">Apellido</label>
+                <input type="text" id="apellidoMedico" required>
+
+                <label for="documentoMedico">Documento</label>
+                <input type="text" id="documentoMedico" required>
+
+                <label for="correoMedico">Correo</label>
+                <input type="email" id="correoMedico" required>
+
+                <label for="telefonoMedico">Teléfono</label>
+                <input type="tel" id="telefonoMedico">
+
+                <label for="especialidadMedico">Especialidad</label>
+                <select id="especialidadMedico" required>
+                    <option value="">Selecciona una especialidad</option>
+                </select>
+
+                <button type="submit">Crear médico</button>
+            </form>
+
+            <p id="mensajeMedico"></p>
+
+            <h3>Médicos registrados</h3>
+            <div id="listaMedicos" class="grid-tarjetas">Cargando...</div>
+        </section>
+
+        <section id="seccionServicios" class="seccion oculta">
+            <h2>Servicios</h2>
+
+            <form id="formServicio">
+                <label for="nombreServicio">Nombre</label>
+                <input type="text" id="nombreServicio" required>
+
+                <label for="descripcionServicio">Descripción</label>
+                <input type="text" id="descripcionServicio">
+
+                <label for="precioServicio">Precio</label>
+                <input type="number" id="precioServicio" required>
+
+                <label for="duracionServicio">Duración (minutos)</label>
+                <input type="number" id="duracionServicio" value="30">
+
+                <button type="submit">Crear servicio</button>
+            </form>
+
+            <p id="mensajeServicio"></p>
+
+            <h3>Servicios registrados</h3>
+            <div id="listaServicios" class="grid-tarjetas">Cargando...</div>
+        </section>
+
+        <section id="seccionEspecialidades" class="seccion oculta">
+            <h2>Especialidades</h2>
+
+            <form id="formEspecialidad">
+                <label for="nombreEspecialidad">Nombre</label>
+                <input type="text" id="nombreEspecialidad" required>
+
+                <label for="descripcionEspecialidad">Descripción</label>
+                <input type="text" id="descripcionEspecialidad">
+
+                <button type="submit">Crear especialidad</button>
+            </form>
+
+            <p id="mensajeEspecialidad"></p>
+
+            <h3>Especialidades registradas</h3>
+            <div id="listaEspecialidades" class="grid-tarjetas">Cargando...</div>
+        </section>
+
+        <section id="seccionCitas" class="seccion oculta">
+            <h2>Todas las citas</h2>
+            <div id="listaCitasAdmin" class="grid-tarjetas">Cargando...</div>
+        </section>
+
+        <section id="seccionResultados" class="seccion oculta">
+            <div class="contenedor-angosto">
+                <h2>Registrar resultado de laboratorio</h2>
+
+                <form id="formBuscarPaciente">
+                    <label for="documentoBusqueda">Documento del paciente</label>
+                    <input type="text" id="documentoBusqueda" required>
+                    <button type="submit">Buscar</button>
+                </form>
+
+                <div id="pacienteEncontrado" class="oculta">
+                    <p id="infoPacienteEncontrado"></p>
+
+                    <form id="formResultado">
+                        <input type="hidden" id="idPacienteResultado">
+
+                        <label for="fechaResultado">Fecha</label>
+                        <input type="date" id="fechaResultado" required>
+
+                        <label for="tipoExamenResultado">Tipo de examen</label>
+                        <input type="text" id="tipoExamenResultado" required>
+
+                        <label for="resultadoTexto">Resultado</label>
+                        <textarea id="resultadoTexto" rows="3" required></textarea>
+
+                        <label for="observacionesResultado">Observaciones (opcional)</label>
+                        <textarea id="observacionesResultado" rows="2"></textarea>
+
+                        <button type="submit">Guardar resultado</button>
+                    </form>
+                </div>
+
+                <p id="mensajeResultado"></p>
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/adminGestion.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>IPS Resucitar - Panel Administrativo</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <a href="../index.html" class="link-inicio">← Volver al inicio</a>
+
+    <div class="contenedor-formulario">
+        <h1>Panel Administrativo</h1>
+
+        <form id="formLoginAdmin">
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" required>
+
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" required>
+
+            <button type="submit">Ingresar</button>
+        </form>
+
+        <p id="mensajeError" class="mensaje-error"></p>
+    </div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/adminAuth.js"></script>
+</body>
+</html>
